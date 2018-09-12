@@ -19,8 +19,6 @@ const schema = new Schema({
   timestamps: true,
 });
 
-schema.index({ userName: 1 });
-
 const Person = mongoose.model('person', schema);
 
 module.exports = {
