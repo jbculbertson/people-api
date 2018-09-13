@@ -3,8 +3,20 @@ const async = require('async');
 const Person = mongoose.model('person');
 
 module.exports = {
+  index: (req, res) => {
+    const userId = req.params.userId;
+
+    Person.find({ userId }, (err, people) => {
+      if (err) {
+        return res.status(500).json(err);
+      }
+      const json = { data: people };
+      return res.status(200).json(json);
+    });
+  },
   batchCreateComma: (req, res) => {
-    const rawArray = req.body;
+    const rawArray = req.body.newPerson;
+    const userId = req.body.userId;
     let successfulUpdates = 0;
     const errors = [];
 
@@ -16,6 +28,7 @@ module.exports = {
         pet,
         favoriteColor,
         dateOfBirth,
+        userId,
       };
       const person = new Person(personProperties)
       person.save((updateErr, updateRes) => {
@@ -30,7 +43,8 @@ module.exports = {
     }, () => res.status(200).json({ errors, successfulUpdates }));
   },
   batchCreateSpace: (req, res) => {
-    const rawArray = req.body;
+    const rawArray = req.body.newPerson;
+    const userId = req.body.userId;
     let successfulUpdates = 0;
     const errors = [];
 
@@ -44,6 +58,7 @@ module.exports = {
         pet,
         dateOfBirth,
         favoriteColor,
+        userId,
       };
       const person = new Person(personProperties)
       person.save((updateErr, updateRes) => {
@@ -58,7 +73,8 @@ module.exports = {
     }, () => res.status(200).json({ errors, successfulUpdates }));
   },
   batchCreatePipe: (req, res) => {
-    const rawArray = req.body;
+    const rawArray = req.body.newPerson;
+    const userId = req.body.userId;
     let successfulUpdates = 0;
     const errors = [];
 
@@ -72,6 +88,7 @@ module.exports = {
         pet,
         favoriteColor,
         dateOfBirth,
+        userId,
       };
       const person = new Person(personProperties)
       person.save((updateErr, updateRes) => {

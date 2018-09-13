@@ -14,6 +14,7 @@ const schema = new Schema({
   pet: String,
   favoriteColor: String,
   dateOfBirth: Date,
+  userId: String,
 }, {
   collection: 'person',
   timestamps: true,

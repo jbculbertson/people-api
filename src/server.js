@@ -17,6 +17,8 @@ function start() {
     .use(bodyParser.urlencoded(bodyparserOptions));
   app.post('/authenticate', userController.authenticate);
   app.post('/register', userController.create);
+
+  app.get('/person/:userId', personController.index);
   app.post('/person/batch/comma', personController.batchCreateComma);
   app.post('/person/batch/space', personController.batchCreateSpace);
   app.post('/person/batch/pipe', personController.batchCreatePipe);
