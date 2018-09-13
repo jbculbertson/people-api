@@ -17,7 +17,9 @@ function start() {
     .use(bodyParser.urlencoded(bodyparserOptions));
   app.post('/authenticate', userController.authenticate);
   app.post('/register', userController.create);
-  app.post('/person', personController.create);
+  app.post('/person/batch/comma', personController.batchCreateComma);
+  app.post('/person/batch/space', personController.batchCreateSpace);
+  app.post('/person/batch/pipe', personController.batchCreatePipe);
 
   app.listen(port, () => console.log(`Wistia server listening on port ${port}!`))
 }
