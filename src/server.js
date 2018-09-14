@@ -26,8 +26,16 @@ function start() {
   app.listen(port, () => console.log(`Wistia server listening on port ${port}!`))
 }
 
-const url = 'mongodb://jeff:Password21@ds253922.mlab.com:53922/wistia-api'
-mongoose.connect(url, () => {
-  console.log('Mongo connected');
-  start();
-});
+function startDb() {
+  const url = 'mongodb://jeff:Password21@ds253922.mlab.com:53922/wistia-api'
+  mongoose.connect(url, () => {
+    console.log('Mongo connected');
+    start();
+  });
+};
+
+startDb();
+
+module.exports = {
+  startDb,
+}
