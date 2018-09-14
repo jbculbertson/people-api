@@ -1,6 +1,6 @@
 # People Uploader API
 
-This is the repo for the node-powered People Uploader app.  The People Uploader allows you to upload a list of your friends, attaching info to each person.  The app stores your friends, and secures them behind a password protected login page.
+This is the repo for the node-powered People Uploader API.  The People Uploader allows you to upload a list of your friends, attaching info to each person.  The app stores your friends, and secures them behind a password protected login page.
 
 ## Project Description
 
@@ -14,10 +14,6 @@ I chose to spend a total of 2 working days on this.  In order to achieve this, m
 ## React Repo
 
 [People React Repo](https://github.com/jbculbertson/people)
-
-## How it works
-
-You need to upload a .txt file, in the same format as either `pipe.txt`, `comma.txt` or `space.txt`.  You'll see these people automatically appended to the list of people.
 
 ## Setup
 
@@ -36,11 +32,11 @@ npm install
 
 This app makes use of packages like.
 
-*   Lodash for helper functions
-*   Async for asynchronous calls
-*   Mongoose to add a schema and model structure
-*   Express for a server structure
-*   Mocha and Chai for testing
+*   `Lodash` for helper functions
+*   `Async` for asynchronous calls
+*   `Mongoose` to add a schema and model structure
+*   `Express` for a server structure
+*   `Mocha and Chai` for testing
 
 ## Run
 
